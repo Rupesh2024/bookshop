@@ -10,6 +10,17 @@ import { ToastContainer } from "react-toastify";
 import Profile from './Pages/Profile'
 import PrivateRoute from "./Components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
+import Contact from './Pages/Contact'
+import AddProduct from './Components/AddProduct'
+import Header from './Components/Header'
+import Listing from './Pages/Listing'
+
+import EditListing from './Pages/EditListing'
+import Offers from './Pages/Offers'
+import Category from './Pages/Category'
+
+// import Listing from './Pages/Listing'
+
 
 const App = () => {
   return (
@@ -25,7 +36,23 @@ const App = () => {
           <Route path='/signup' element={< Signup />}></Route>
           <Route path='/profile' element={< Profile />}></Route>
           <Route path='/forgot-password' element={< ForgotPassword />}></Route>
-          
+          <Route path='/contactus' element={< Contact />}></Route>
+          <Route path='/header' element={< Header />}></Route>
+          <Route
+            path="/category/:categoryName/:listingId"
+            element={<Listing />}
+          />
+          <Route
+            path="/category/:categoryName"
+            element={<Category />}
+          />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="ap" element={<PrivateRoute />}>
+            <Route path="/ap" element={<AddProduct />} />
+          </Route>
+          <Route path="eap" element={<PrivateRoute />}>
+            <Route path="/eap/:listingId" element={<EditListing />} />
+          </Route>
         </Routes>
       </Router>
       <ToastContainer

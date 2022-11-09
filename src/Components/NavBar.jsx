@@ -21,12 +21,12 @@ export default function Header() {
     }
   }
   return (
-    <div className="bg-white border-b shadow-sm sticky top-0 z-20">
+    <div className="bg-white border-b shadow-sm sticky top-0  z-20">
       <header className="flex justify-between items-center  max-w-6xl mx-auto">
         <div>
           <img
             src="https://rails-assets-us.bookshop.org/assets/logo-a52621fe944d907a0a91448f35b41eca07947302711d35c3322a99144928f1aa.svg"
-            alt="logo"
+            // alt="logo"
             className="h-5 cursor-pointer "
             // height={450}
             // width={350}
@@ -53,11 +53,11 @@ export default function Header() {
             </li>
             <li
               className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMatchRoute("/ebooks") && "text-black border-b-red-500"
+                pathMatchRoute("/offers") && "text-black border-b-red-500"
               }`}
-              onClick={() => navigate("/ebooks")}
+              onClick={() => navigate("/offers")}
             >
-              E-books
+              Offers
             </li>
           </ul>
         </div>
