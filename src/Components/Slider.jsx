@@ -20,7 +20,7 @@ export default function Slider() {
   useEffect(() => {
     async function fetchListings() {
       const listingsRef = collection(db, "listings");
-      const q = query(listingsRef, orderBy("timestamp", "desc"), limit(5));
+      const q = query(listingsRef, orderBy("timestamp", "desc"), limit(20));
       const querySnap = await getDocs(q);
       let listings = [];
       querySnap.forEach((doc) => {
@@ -59,10 +59,10 @@ export default function Slider() {
             >
               <div
                 style={{
-                  background: `url(${data.imgUrls[0]}) center, no-repeat`,
+                  background: `url(${data.imgUrls[0]})  no-repeat`,
                   backgroundSize: "cover",
                 }}
-                className="relative w-full h-[550px] overflow-hidden"
+                className="relative w-full h-[800px] overflow-hidden"
               ></div>
               <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
                 {data.name}
